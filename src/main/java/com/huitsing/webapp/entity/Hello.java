@@ -10,8 +10,9 @@ import javax.persistence.Table;
 @Table(name="hello")
 public class Hello {
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
+	private String title;
 	private String content;
 	
 	public Integer getId() {
@@ -19,6 +20,12 @@ public class Hello {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getContent() {
 		return content;
