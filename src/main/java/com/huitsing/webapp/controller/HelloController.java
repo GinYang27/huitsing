@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.huitsing.webapp.model.HelloModel;
+import com.huitsing.webapp.model.response.OperationResponse;
 import com.huitsing.webapp.service.HelloService;
 
 
@@ -40,41 +41,41 @@ public class HelloController {
 	
 	//Create a Hello entity in db
 	@RequestMapping(value = "hello", method = RequestMethod.POST)
-	public ResponseEntity<Boolean> createHello(@RequestBody HelloModel helloModel) {
-		Boolean result = null;
+	public ResponseEntity<OperationResponse> createHello(@RequestBody HelloModel helloModel) {
+		OperationResponse response = null;
 		try {
-			result = helloService.createHello(helloModel);
+			response = helloService.createHello(helloModel);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(OperationResponse.generateFailedResponse(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<>(result, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
 	//Update a Hello entity in db
 	@RequestMapping(value = "hello/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Boolean> updateHello(@PathVariable("id") Integer helloId, @RequestBody HelloModel helloModel) {
-		Boolean result = null;
+	public ResponseEntity<OperationResponse> updateHello(@PathVariable("id") Integer helloId, @RequestBody HelloModel helloModel) {
+		OperationResponse response = null;
 		try {
-			result = helloService.updateHello(helloModel, helloId);
+			response = helloService.updateHello(helloModel, helloId);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(OperationResponse.generateFailedResponse(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<>(result, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
 	//Delete a Hello entity in db
 	@RequestMapping(value = "hello/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> deleteHello(@PathVariable("id") Integer helloId) {
-		Boolean result = null;
+	public ResponseEntity<OperationResponse> deleteHello(@PathVariable("id") Integer helloId) {
+		OperationResponse response = null;
 		try {
-			result = helloService.deleteHello(helloId);
+			response = helloService.deleteHello(helloId);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(OperationResponse.generateFailedResponse(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<>(result, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
 }
