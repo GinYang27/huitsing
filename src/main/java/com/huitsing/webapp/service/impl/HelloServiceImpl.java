@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.huitsing.webapp.dao.HelloDAO;
 import com.huitsing.webapp.entity.Hello;
 import com.huitsing.webapp.model.HelloModel;
+import com.huitsing.webapp.model.response.OperationResponse;
 import com.huitsing.webapp.service.HelloService;
 
 @Service
@@ -28,34 +29,36 @@ public class HelloServiceImpl implements HelloService {
 	}
 
 	@Override
-	public Boolean createHello(HelloModel helloModel) throws Exception {
+	public OperationResponse createHello(HelloModel helloModel) throws Exception {
 		Hello hello = new Hello();
 		hello.setContent(helloModel.getContent());
 		hello.setTitle(helloModel.getTitle());
 		helloDAO.save(hello);
-		return true;
+		return OperationResponse.generateSuccessResponse();
 	}
 
 	@Override
-	public Boolean updateHello(HelloModel helloModel, Integer helloId) throws Exception {
+	public OperationResponse updateHello(HelloModel helloModel, Integer helloId) throws Exception {
 		Hello hello = helloDAO.findById(helloId);
 		if(hello == null) {
-			throw new Exception("Hello entity is not valid");
+//			throw new Exception("Hello entity is not valid");
+			return OperationResponse.generateFailedResponse("Cannot find this entity.");
 		}
 		hello.setContent(helloModel.getContent());
 		hello.setTitle(helloModel.getTitle());
 		helloDAO.save(hello);
-		return true;
+		return OperationResponse.generateSuccessResponse();
 	}
 
 	@Override
-	public Boolean deleteHello(Integer helloId) throws Exception {
+	public OperationResponse deleteHello(Integer helloId) throws Exception {
 		Hello hello = helloDAO.findById(helloId);
 		if(hello == null) {
-			throw new Exception("Hello entity is not valid");
+//			throw new Exception("Hello entity is not valid");
+			return OperationResponse.generateFailedResponse("Cannot find this entity.");
 		}
 		helloDAO.delete(hello);
-		return true;
+		return OperationResponse.generateSuccessResponse();
 	}
 
 }
