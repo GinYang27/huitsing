@@ -60,5 +60,4 @@ public class HelloServiceImpl implements HelloService {
 		helloDAO.delete(hello);
 		return OperationResponse.generateSuccessResponse();
 	}
-
 }
