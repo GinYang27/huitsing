@@ -26,7 +26,7 @@ public class HelloController {
 	@Autowired
 	private HelloModelValidator helloModelValidator;
 	
-	@RequestMapping("/")
+	@RequestMapping("/index")
     public String index() {
         return "Greetings from Spring Boot!";
     }
