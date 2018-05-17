@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <header class="header">
+      <nav class="inner">
+
+      </nav>
+    </header>
     <img src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>

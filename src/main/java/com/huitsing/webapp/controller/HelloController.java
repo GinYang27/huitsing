@@ -8,6 +8,7 @@ public class HelloController {
 	
 	@RequestMapping("/")
     public String index() {
-        return "This is the first version of this website, where the dream starts off. - Jin";
+//        return "This is the first version of this website, where the dream starts off. - Jin";
+		return "First version";
     }
 }
