@@ -22,4 +22,5 @@ public class WebappApplication extends SpringBootServletInitializer {
     public static void main(String[] args) throws Exception {
         SpringApplication.run(WebappApplication.class, args);
     }
+
 }
