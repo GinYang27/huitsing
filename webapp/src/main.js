@@ -4,6 +4,9 @@ import VueResource from 'vue-resource'
 import App from './App.vue'
 import Routes from './router'
 
+import('../node_modules/bootstrap/dist/js/bootstrap.min.js')
+import('../node_modules/bootstrap/dist/css/bootstrap.min.css')
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)

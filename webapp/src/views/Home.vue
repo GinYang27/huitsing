@@ -11,6 +11,9 @@
       <li>
         <router-link to="/page2">Go Page2</router-link>
       </li>
+      <li>
+        <router-link to="/login">Login</router-link>
+      </li>
     </ul>
   </div>
 </template>
