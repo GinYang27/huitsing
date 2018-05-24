@@ -1,7 +1,6 @@
 <template>
   <div class="container h-login-container">
-    This is a login page.
-    <login-dialog></login-dialog>
+      <login-dialog></login-dialog>
   </div>
 </template>
 
@@ -16,7 +15,10 @@
 
 <style lang="scss" scoped>
   .h-login-container {
-    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 
