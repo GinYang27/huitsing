@@ -1,12 +1,12 @@
 <template>
   <div class="h-login-form">
     <h2 class="h-login-head">Welcome</h2>
-    <form>
+    <form @submit.prevent="login">
       <div class="form-group">
-        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email">
+        <input type="email" class="form-control" placeholder="Email" v-model="email">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control" placeholder="Password" v-model="password">
       </div>
       <button type="submit" class="btn btn-primary h-login-btn">Continue</button>
     </form>
@@ -14,7 +14,27 @@
 </template>
 
 <script>
-  export default {}
+  import Constants from '../constants/apiUrl.js';
+  export default {
+    data() {
+      return {
+        email: '',
+        password: ''
+      }
+    },
+    methods: {
+      login() {
+        const apiUrl = Constants.SERVER_BASE_URL + Constants.put_login;
+        const paramData = {
+          email: this.email,
+          password: this.password
+        };
+        this.$http.put(apiUrl, paramData).then(response => {
+          console.log(response);
+        })
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

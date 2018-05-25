@@ -1,10 +1,12 @@
 package com.huitsing.webapp.validator;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.huitsing.webapp.model.auth.LoginModel;
 
+@Component
 public class LoginModelValidator implements Validator {
 
 	@Override

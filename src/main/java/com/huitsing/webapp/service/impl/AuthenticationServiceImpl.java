@@ -31,8 +31,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 			authModel.setResponse(OperationResponse.generateFailedResponse("Email is incorret."));
 			return authModel;
 		}
-		
-		if(user.getPassword() != loginModel.getPassword()) {
+		if(!user.getPassword().equals(loginModel.getPassword())) {
 			authModel.setResponse(OperationResponse.generateFailedResponse("Password is incorrect."));
 			return authModel;
 		}
