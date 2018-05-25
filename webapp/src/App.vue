@@ -34,4 +34,8 @@
   #app {
     height: 100%;
   }
+  .h-validate-error {
+    color: red;
+    font-size: 14px;
+  }
 </style>

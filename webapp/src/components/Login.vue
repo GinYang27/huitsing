@@ -3,10 +3,12 @@
     <h2 class="h-login-head">Welcome</h2>
     <form @submit.prevent="login">
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email" v-model="email">
+        <input v-validate="'required|email'" name="email" type="email" class="form-control" placeholder="Email" v-model="email">
+        <span class="h-validate-error">{{errors.first('email')}}</span>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" v-model="password">
+        <input v-validate="'required'" name="password" type="password" class="form-control" placeholder="Password" v-model="password">
+        <span class="h-validate-error">{{errors.first('password')}}</span>
       </div>
       <button type="submit" class="btn btn-primary h-login-btn">Continue</button>
     </form>
