@@ -23,12 +23,12 @@ public class LoginModelValidator implements Validator {
 			return;
 		}
 
-		if (loginModel.getEmail() == null || loginModel.getEmail().isEmpty()) {
+		if (loginModel.getEmail() == null || loginModel.getEmail().trim().isEmpty()) {
 			errors.reject("Email is null.");
 			return;
 		}
 
-		if (loginModel.getPassword() == null || loginModel.getPassword().isEmpty()) {
+		if (loginModel.getPassword() == null || loginModel.getPassword().trim().isEmpty()) {
 			errors.reject("Password is null.");
 			return;
 		}
