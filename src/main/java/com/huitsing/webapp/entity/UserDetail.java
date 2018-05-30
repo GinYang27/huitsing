@@ -39,5 +39,11 @@ public class UserDetail {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 }
