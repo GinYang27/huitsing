@@ -1,13 +1,13 @@
 <template>
   <div class="h-login-form">
     <h2 class="h-login-head">Welcome</h2>
-    <form @submit.prevent="login">
+    <form @submit.prevent="login" novalidate>
       <div class="form-group">
         <input v-validate="'required|email'" name="email" type="email" class="form-control" placeholder="Email" v-model="email">
         <span class="h-validate-error">{{errors.first('email')}}</span>
       </div>
       <div class="form-group">
-        <input v-validate="'required'" name="password" type="password" class="form-control" placeholder="Password" v-model="password">
+        <input v-validate="'required|min:6'" name="password" type="password" class="form-control" placeholder="Password" v-model="password">
         <span class="h-validate-error">{{errors.first('password')}}</span>
       </div>
       <button type="submit" class="btn btn-primary h-login-btn">Continue</button>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import Constants from '../constants/apiUrl.js';
+  import API from '../constants/apiUrl.js';
   export default {
     data() {
       return {
@@ -26,13 +26,19 @@
     },
     methods: {
       login() {
-        const apiUrl = Constants.SERVER_BASE_URL + Constants.put_login;
-        const paramData = {
-          email: this.email,
-          password: this.password
-        };
-        this.$http.put(apiUrl, paramData).then(response => {
-          console.log(response);
+        this.$validator.validateAll().then(result => {
+          if(result) {
+            const apiUrl = API.SERVER_BASE_URL + API.put_login;
+            const paramData = {
+              email: this.email,
+              password: this.password
+            };
+            this.$http.put(apiUrl, paramData).then(response => {
+              console.log(response);
+            }, errResponse => {
+              console.error(errResponse);
+            })
+          }
         })
       }
     }
