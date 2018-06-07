@@ -1,5 +1,6 @@
 <template>
   <div>
+    <site-header></site-header>
     <h1>Home Page</h1>
     <ul>
       <li>
@@ -17,3 +18,14 @@
     </ul>
   </div>
 </template>
+
+<script>
+import SiteHeader from '../components/SiteHeader.vue'
+export default {
+  components: {
+    SiteHeader
+  }
+  
+}
+</script>
+
