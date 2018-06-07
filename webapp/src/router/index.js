@@ -4,6 +4,7 @@ import Subpage2 from '../views/SubPage2.vue'
 import Page2View from '../views/Page2.vue'
 import HomeView from '../views/Home.vue'
 import VueView from '../views/VueDefault.vue'
+import LoginView from '../views/LoginPage.vue'
 
 export default [
   { path: '/', component: HomeView },
@@ -15,5 +16,6 @@ export default [
     ]
   },
   { path: '/page2', component: Page2View },
-  { path: '/vue', component: VueView}
+  { path: '/vue', component: VueView},
+  { path: '/login', component: LoginView}
 ]

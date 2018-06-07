@@ -41,8 +41,7 @@ public class HelloServiceImpl implements HelloService {
 	public OperationResponse updateHello(HelloModel helloModel, Integer helloId) throws Exception {
 		Hello hello = helloDAO.findById(helloId);
 		if(hello == null) {
-//			throw new Exception("Hello entity is not valid");
-			return OperationResponse.generateFailedResponse("Cannot find this entity.");
+			throw new Exception("Cannot find this entity.");
 		}
 		hello.setContent(helloModel.getContent());
 		hello.setTitle(helloModel.getTitle());
@@ -54,8 +53,7 @@ public class HelloServiceImpl implements HelloService {
 	public OperationResponse deleteHello(Integer helloId) throws Exception {
 		Hello hello = helloDAO.findById(helloId);
 		if(hello == null) {
-//			throw new Exception("Hello entity is not valid");
-			return OperationResponse.generateFailedResponse("Cannot find this entity.");
+			throw new Exception("Cannot find this entity.");
 		}
 		helloDAO.delete(hello);
 		return OperationResponse.generateSuccessResponse();

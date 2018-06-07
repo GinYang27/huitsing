@@ -6,5 +6,6 @@ import com.huitsing.webapp.entity.User;
 
 public interface UserDAO extends CrudRepository<User, Long>{
 	User findById(Integer id);
+	User findByEmail(String email);
 
 }
