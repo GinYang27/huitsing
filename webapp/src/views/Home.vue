@@ -1,8 +1,8 @@
 <template>
   <div class="h-app-wrap">
     <site-header></site-header>
-    <h1>Home Page</h1>
     <router-view></router-view>
+    <!-- <h1>Home Page</h1>
     <ul>
       <li>
         <router-link to="/vue">Go Vue Default Page</router-link>
@@ -16,7 +16,7 @@
       <li>
         <router-link to="/login">Login</router-link>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -26,13 +26,13 @@ export default {
   components: {
     SiteHeader
   }
-  
 }
 </script>
 
 <style lang="scss" scoped>
   .h-app-wrap {
-    background-color: #fafafa
+    background-color: #fafafa;
+    height: 100%;
   }
 </style>
 
