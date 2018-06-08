@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="h-app-wrap">
     <site-header></site-header>
     <h1>Home Page</h1>
+    <router-view></router-view>
     <ul>
       <li>
         <router-link to="/vue">Go Vue Default Page</router-link>
@@ -28,4 +29,11 @@ export default {
   
 }
 </script>
+
+<style lang="scss" scoped>
+  .h-app-wrap {
+    background-color: #fafafa
+  }
+</style>
+
 
