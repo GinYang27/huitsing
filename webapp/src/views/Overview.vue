@@ -18,7 +18,7 @@
       </section>
       <section class="container h-third-sec">
         <div class="h-tech-wrapper" v-for="(tech, i) in techLogos" :key="i">
-          <img :src="tech" :alt="tech">
+          <img :src="tech.image" :alt="tech">
         </div>
       </section>
     </div>
@@ -29,22 +29,50 @@
 export default {
   data() {
     return {
-      techLogos: [
-        require('../assets/tech/tech_vue.png'),
-        require('../assets/tech/tech_js.jpeg'),
-        require('../assets/tech/tech_jquery.png'),
-        require('../assets/tech/tech_webpack.png'),
-        require('../assets/tech/tech_npm.png'),
-        require('../assets/tech/tech_bootstrap.png'),
-        require('../assets/tech/tech_java.png'),
-        require('../assets/tech/tech_mysql.png'),
-        require('../assets/tech/tech_firebase.jpg'),
-        require('../assets/tech/tech_ebs.png'),
-        require('../assets/tech/tech_ec2.png'),
-        require('../assets/tech/tech_rds.png'),
-        require('../assets/tech/tech_s3.png'),
-        require('../assets/tech/tech_nginx.png'),
-        require('../assets/tech/tech_github.png')
+      techLogos: [ 
+        {
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_vue.png')
+        },{
+          name: 'Languages',
+          image: require('../assets/tech/tech_js.jpeg')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_jquery.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_webpack.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_bootstrap.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_java.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_mysql.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_firebase.jpg')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_ebs.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_ec2.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_rds.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_s3.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_nginx.png')
+        },{
+          name: 'Javascript UI Libraries',
+          image: require('../assets/tech/tech_github.png')
+        }
       ]
     }
   }
