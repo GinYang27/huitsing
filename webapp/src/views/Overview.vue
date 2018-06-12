@@ -16,7 +16,7 @@
           In the future, I wish this can be platform for web developer to communicate and create great product.
         </p>
       </section>
-      <section class="h-third-sec">
+      <section class="container h-third-sec">
         <div class="h-tech-wrapper" v-for="(tech, i) in techLogos" :key="i">
           <img :src="tech" :alt="tech">
         </div>
@@ -74,6 +74,13 @@ export default {
   .h-third-sec {
     display: flex;
     flex-wrap: wrap;
+    img {
+      width: 100px;
+    }
+    .h-tech-wrapper {
+      margin: 15px;
+    }
+    
   }
 </style>
 
