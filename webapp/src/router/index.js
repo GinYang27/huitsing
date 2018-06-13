@@ -5,9 +5,19 @@ import Page2View from '../views/Page2.vue'
 import HomeView from '../views/Home.vue'
 import VueView from '../views/VueDefault.vue'
 import LoginView from '../views/LoginPage.vue'
+import Overview from '../views/Overview.vue'
+import ModulesView from '../views/ModulesView.vue'
+import AboutView from '../views/AboutView.vue'
 
 export default [
-  { path: '/', component: HomeView },
+  { path: '/', 
+    component: HomeView,
+    children: [
+      { path: 'overview', component: Overview },
+      { path: 'modules', component: ModulesView},
+      { path: 'about', component: AboutView}
+    ] 
+  },
   { path: '/page1', 
     component: Page1View,
     children: [
