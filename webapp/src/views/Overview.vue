@@ -13,7 +13,7 @@
           <p class="h-home-subtitle"> This website is created to note some web development technologies, 
           including database, front-end development, back-end development, UI design and algorithm. 
           I will list each of these technologis in some modules,with a DEMO. 
-          In the future, I wish this can be platform for web developer to communicate and create great product.
+          In the future, I wish this can be platform for web developers to communicate and create great product.
           </p>
          
         </div>
@@ -107,12 +107,10 @@ export default {
     text-align: center;
     color: white;
   }
-  .h-second-sec {
+  .h-second-sec, .h-fourth-sec {
     background-color: white;
-    padding: 150px;
-    p {
-      padding: 10px;
-    }
+    padding: 80px 0px;
+    color: black;
   }
   .h-third-sec {
     display: flex;
@@ -129,12 +127,6 @@ export default {
         font-weight: 600;
       }
     }
-    
-  }
-  .h-fourth-sec {
-    background-color: white;
-    padding: 80px 0px;
-    color: black;
   }
   .h-home-title {
     color: #4d2460;
@@ -152,6 +144,14 @@ export default {
     text-align: center;
     margin-top: 20px;
     line-height: 3em;
+  }
+  @media screen and (max-width: 600px) {
+    .h-first-sec {
+      padding: 50px 0px;
+    }
+    .h-home-title {
+      font-size: 40px;
+    }
   }
 </style>
 
