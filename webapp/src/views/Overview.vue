@@ -26,13 +26,15 @@
       </section>
       <section class="h-fourth-sec">
         <!-- <about-me></about-me> -->
-        <h1 class="h-home-title">Hi, <span>I'm</span> Jin Yang</h1>
-        <p class="h-home-subtitle">
-          I'm a full-stack web developer based in Missouri, USA. <br>
-          I graduate from Stevens Institute of Technology in New Jersey. <br>
-          I have worked with startups in areas such as E-commerce, Administrative dashboard and Reservation system. <br>
-          If you'd like to get in touch feel free to send me an email(gin.yang17@gmail.com).
-        </p>
+        <div class="container">
+          <h1 class="h-home-title">Hi, <span>I'm</span> Jin Yang</h1>
+          <p class="h-home-subtitle">
+            I'm a full-stack web developer based in Missouri, USA. <br>
+            I graduate from Stevens Institute of Technology in New Jersey. <br>
+            I have worked with startups in areas such as E-commerce, Administrative dashboard and Reservation system. <br>
+            If you'd like to get in touch feel free to send me an email(gin.yang17@gmail.com).
+          </p>
+        </div>
       </section>
     </div>
   </div>
@@ -116,6 +118,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     padding: 80px 0px;
+    justify-content: space-around;
     img {
       width: 100px;
     }
@@ -151,6 +154,17 @@ export default {
     }
     .h-home-title {
       font-size: 40px;
+    }
+    .h-third-sec {
+      img {
+        width: 80px;
+      }
+      .h-tech-wrapper {
+        margin: 15px;
+        p {
+          font-size: 12px;
+        }
+      }
     }
   }
 </style>
