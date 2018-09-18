@@ -8,18 +8,32 @@
         <button type="button" class="btn btn-primary">GET STARTED</button>
       </section>
       <section class="h-second-sec">
-        <p class="container">
-          <strong>6/11/2018 (Kansas City, MO, USA)</strong> 
-          This website is created to note some web development technologies, 
+        <div class="container">
+          <h1 class="h-home-title"> Welcome to Hui-tsing.com</h1>
+          <p class="h-home-subtitle"> This website is created to note some web development technologies, 
           including database, front-end development, back-end development, UI design and algorithm. 
           I will list each of these technologis in some modules,with a DEMO. 
-          In the future, I wish this can be platform for web developer to communicate and create great product.
-        </p>
+          In the future, I wish this can be platform for web developers to communicate and create great product.
+          </p>
+         
+        </div>
       </section>
       <section class="container h-third-sec">
         <div class="h-tech-wrapper" v-for="(tech, i) in techLogos" :key="i">
           <img :src="tech.image" :alt="tech">
           <p>{{tech.name}}</p>
+        </div>
+      </section>
+      <section class="h-fourth-sec">
+        <!-- <about-me></about-me> -->
+        <div class="container">
+          <h1 class="h-home-title">Hi, <span>I'm</span> Jin Yang</h1>
+          <p class="h-home-subtitle">
+            I'm a full-stack web developer based in Missouri, USA. <br>
+            I graduate from Stevens Institute of Technology in New Jersey. <br>
+            I have worked with startups in areas such as E-commerce, Administrative dashboard and Reservation system. <br>
+            If you'd like to get in touch feel free to send me an email(gin.yang17@gmail.com).
+          </p>
         </div>
       </section>
     </div>
@@ -95,18 +109,16 @@ export default {
     text-align: center;
     color: white;
   }
-  .h-second-sec {
+  .h-second-sec, .h-fourth-sec {
     background-color: white;
-    padding: 150px;
-    p {
-      line-height: 3em;
-      padding: 10px;
-    }
+    padding: 80px 0px;
+    color: black;
   }
   .h-third-sec {
     display: flex;
     flex-wrap: wrap;
     padding: 80px 0px;
+    justify-content: space-around;
     img {
       width: 100px;
     }
@@ -118,7 +130,42 @@ export default {
         font-weight: 600;
       }
     }
-    
+  }
+  .h-home-title {
+    color: #4d2460;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 68px;
+    font-weight: 400;
+    span {
+      color: black;
+    }
+  }
+  .h-home-subtitle {
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 3em;
+  }
+  @media screen and (max-width: 600px) {
+    .h-first-sec {
+      padding: 50px 0px;
+    }
+    .h-home-title {
+      font-size: 40px;
+    }
+    .h-third-sec {
+      img {
+        width: 80px;
+      }
+      .h-tech-wrapper {
+        margin: 15px;
+        p {
+          font-size: 12px;
+        }
+      }
+    }
   }
 </style>
 
